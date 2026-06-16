@@ -1,0 +1,38 @@
+================================================================
+ Distributed Edge-AI MMC Simulation -- Summary
+================================================================
+
+Cells / edge nodes        : 10
+Control steps             : 1000 @ 10 kHz (100 ms simulated)
+Edge model                : 'small' (1330 params, 1248 MACs)
+
+-- Fault detection --------------------------------------------
+Accuracy                  : 99.94 %
+Detection latency         : 0.10 ms after threshold crossing
+
+-- Synchronisation (PTP) --------------------------------------
+Mean sync error           : 143.6 ns
+Max sync error            : 974.7 ns
+Convergence time          : 40.3 ms
+
+-- Latency: distributed vs centralized ------------------------
+Edge inference / call     : 22.00 us
+Hub inference (batched)   : 24.17 us
+Distributed / step        : 24.00 us
+Centralized / step        : 79.17 us
+Speedup                   : 3.30 x
+
+-- Quantisation sweep -----------------------------------------
+ bits    acc %    cpu ms   fpga us     LUT    DSP  BRAM
+   32    99.98    0.0220     1.660   10770     24     3
+   16    99.98    0.0219     0.587    6370     16     2
+    8    99.98    0.0220     0.440    2850      0     1
+    4    99.95    0.0221     0.245    2498      0     1
+
+-- FPGA deployment (headline config) --------------------------
+Target                    : Zynq-7000 (xc7z020), 8-bit
+LUTs (per cell)           : 2850
+LUTs (full 10-cell system): 28500
+DSP48 / FF / BRAM18       : 0 / 1712 / 1
+Est. inference latency    : 0.440 us @ 200 MHz
+

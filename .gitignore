@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# Keep results/ and data/ — they are reproducible deliverables checked into the
+# repo so the README figures render on GitHub. Delete the line below to ignore
+# generated artifacts instead.
+# results/

@@ -1,0 +1,13 @@
+# Core scientific stack
+numpy>=1.23
+pandas>=1.5
+matplotlib>=3.6
+seaborn>=0.12
+
+# Deep learning (edge fault-detection model + quantization)
+# The code targets the torch 2.x API; 2.0.0 is the reference version.
+torch>=2.0.0
+
+# Interactive demo notebook
+jupyter>=1.0
+ipywidgets>=8.0
